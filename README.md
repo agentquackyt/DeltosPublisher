@@ -20,7 +20,7 @@ Deltos Publisher is a web application for creating and managing social media pos
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/agentquackyt/deltos-publisher.git
+    git clone https://github.com/agentquackyt/DeltosPublisher.git
     ```
 2. Navigate to the project directory:
     ```sh
