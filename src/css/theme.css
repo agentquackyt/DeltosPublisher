@@ -1,0 +1,21 @@
+:root {
+
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        --surface: #1e1e1e;
+        --surface-variant: #2c2c2c;
+
+        --text: #ffffff;
+        --text-secondary: #b3b3b3;
+
+        --primary: #fcdc86;
+        --primary-variant: #1846bb;
+        --secondary: #1ebbac;
+
+        /* States */
+        --error: #cf6679;
+        --success: #16d33f;
+    }
+}
