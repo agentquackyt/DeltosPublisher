@@ -35,7 +35,7 @@
     z-index: 1;
 }
 
-.field:hover {
+.field:hover:not(.has-image-select) {
     border-color: var(--field-hover);
 }
 
@@ -108,12 +108,12 @@
 }
 
 /* Interaction States */
-.field:focus-within {
+.field:focus-within:not(.has-image-select) {
     background: var(--field-focus-bg);
     border-color: var(--field-focus-border);
 }
 
-.field:focus-within span {
+.field:focus-within:not(.has-image-select) span {
     color: var(--primary);
 }
 
@@ -248,4 +248,13 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+}
+/* No Label Modifier */
+.field.no-label {
+    padding: 0.75rem;
+    height: 2.75rem;
+}
+
+.field.no-label > span:not(.chip) {
+    display: none;
 }

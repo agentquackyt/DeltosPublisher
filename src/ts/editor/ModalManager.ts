@@ -286,7 +286,7 @@ class Modal {
                     }
                     button.innerHTML = `
                         <img src="${option.src}" alt="${option.name}" />
-                        <span class="name">${option.name}</span>
+                        <span class="name">${this.shortenLabel(option.name)}</span>
                         <span class="meta">${option.mimeType}</span>
                     `;
                     button.addEventListener('click', () => {
@@ -431,6 +431,14 @@ class Modal {
         });
 
         return modalBody;
+    }
+
+    private shortenLabel(label: string): string {
+        const maxLength = 20;
+        if (label.length <= maxLength) {
+            return label;
+        }
+        return label.slice(0, maxLength - 3) + '...';
     }
 
     async show(): Promise<{ [key: string]: any } | null> {

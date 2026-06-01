@@ -198,15 +198,24 @@ const ensureSeedTemplate = (templates: Template[], contents: Content[], project:
         return { templates, contents, project };
     }
 
-    const seededTemplate = new Template('Starter Post');
+    const seededTemplate = new Template(project.name + ' Template');
+    project.backgroundColor = '#fff';
     seededTemplate.description = 'Default template for first-time editing.';
-    seededTemplate.addField(createProjectField('text', 'Headline'));
-    seededTemplate.addField(createProjectField('text', 'Subtitle', {
-        location: { x: 40, y: 200, anchor: 'top-left', unit: 'px' },
-        size: { width: 260, height: 80, unit: 'px' },
+    seededTemplate.addField(createProjectField('text', 'Headline', {
+        location: { x: 200, y: 200, anchor: 'top-left', unit: 'px' },
+        size: { width: 260, height: 150, unit: 'px' },
+        style: {
+            padding: 10,
+            color: '#000',
+            backgroundColor: 'transparent',
+            fontFamily: 'Arial, sans-serif',
+            fontSize: 25,
+            fontWeight: 'bold',
+            textAlign: 'left',
+        }
     }));
 
-    const seededContent = new Content('Starter Content', seededTemplate.id);
+    const seededContent = new Content(project.name + ' Content', seededTemplate.id);
 
     const nextTemplates = templates.length > 0 ? templates : [seededTemplate];
     const nextContents = contents.length > 0 ? contents : [seededContent];

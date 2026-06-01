@@ -1012,9 +1012,11 @@ class DeltosPublisherApp {
                             <span class="material-symbols-rounded">upload</span>
                             <span>Upload Assets</span>
                         </button>
-                        <label class="field inline" style="margin-bottom: 0;">
+                        <input type="checkbox" id="asset-upload-global" class="toggle-checkbox" />
+                        <label for="asset-upload-global" class="btn secondary toggle-label" style="margin-bottom: 0;">
+                            <span class="material-symbols-rounded icon-unchecked">public_off</span>
+                            <span class="material-symbols-rounded icon-checked">public</span>
                             <span>Global scope</span>
-                            <input type="checkbox" id="asset-upload-global" />
                         </label>
                     </div>
                 </div>
@@ -1104,14 +1106,20 @@ class DeltosPublisherApp {
                     ${this.renderAssetPreview(asset)}
                 </div>
                 <div class="asset-card-body">
-                    <input type="text" value="${escapeAttribute(asset.name)}" data-asset-action="rename-input" readonly title="${escapeAttribute(asset.name)}" />
+                    <label class="field no-label">
+                        <span>Name</span>
+                        <input type="text" value="${escapeAttribute(asset.name)}" data-asset-action="rename-input" readonly title="${escapeAttribute(asset.name)}" />
+                    </label>
                     <div class="asset-card-meta">${scopeLabel}${asset.isVector() ? ' · SVG' : ''}</div>
                     
                     <div class="asset-card-actions-row">
-                        <select data-asset-action="scope" title="Asset Scope">
-                            <option value="project" ${asset.scope === 'project' ? 'selected' : ''}>Project</option>
-                            <option value="global" ${asset.scope === 'global' ? 'selected' : ''}>Global</option>
-                        </select>
+                        <label class="field no-label" style="flex: 1; min-width: 0;">
+                            <span>Scope</span>
+                            <select data-asset-action="scope" title="Asset Scope">
+                                <option value="project" ${asset.scope === 'project' ? 'selected' : ''}>Project</option>
+                                <option value="global" ${asset.scope === 'global' ? 'selected' : ''}>Global</option>
+                            </select>
+                        </label>
                         
                         <div class="asset-card-icon-actions">
                             <button type="button" class="icon-button" data-asset-action="rename" aria-label="Rename" title="Rename">

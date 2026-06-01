@@ -47,6 +47,7 @@ button, .btn {
 
     font-weight: 500;
     font-size: medium;
+    user-select: none;
 }
 
 button:hover, .btn:hover {
@@ -61,4 +62,32 @@ button:active, .btn:active {
 
 .btn.btn-xl {
     padding: 1rem;
+}
+/* Toggle button via hidden checkbox */
+input.toggle-checkbox {
+    display: none;
+}
+
+input.toggle-checkbox + .btn.toggle-label {
+    /* Unchecked state */
+    --btn-bg: var(--surface-strong);
+    --btn-color: var(--text-secondary);
+}
+
+input.toggle-checkbox:checked + .btn.toggle-label {
+    /* Checked state */
+    --btn-bg: var(--primary);
+    --btn-color: var(--primary-text);
+}
+
+input.toggle-checkbox + .btn.toggle-label .icon-checked {
+    display: none;
+}
+
+input.toggle-checkbox:checked + .btn.toggle-label .icon-unchecked {
+    display: none;
+}
+
+input.toggle-checkbox:checked + .btn.toggle-label .icon-checked {
+    display: inline-block;
 }

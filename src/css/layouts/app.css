@@ -168,11 +168,6 @@ header {
     gap: 0.5rem;
 }
 
-.asset-card-body input,
-.asset-card-body select {
-    width: 100%;
-}
-
 .asset-card-meta,
 .content-asset-source {
     font-size: 0.8rem;
@@ -407,11 +402,13 @@ header {
     gap: 0.4rem;
     padding: 0.5rem;
     border-radius: 0.85rem;
-    border: 1px solid var(--outline);
-    background: var(--surface-strong);
+    border: 1px solid transparent;
+    background: transparent;
     cursor: pointer;
     text-align: left;
+    transition: background 150ms ease, border-color 150ms ease;
 }
+
 
 .image-select-card.is-selected {
     border-color: var(--primary);
@@ -420,7 +417,7 @@ header {
 
 .image-select-card img {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     border-radius: 0.6rem;
     background: var(--surface);
