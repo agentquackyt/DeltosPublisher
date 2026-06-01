@@ -1,0 +1,260 @@
+/* The Unified Material Filled Field */
+.field {
+    --field-bg: var(--surface-variant);
+    --field-border: color-mix(in srgb, var(--outline) 88%, transparent);
+    --field-text: var(--text);
+    --field-label: var(--text-secondary);
+    --field-hover-bg: color-mix(in srgb, var(--surface-variant) 88%, var(--primary) 12%);
+    --field-focus-bg: color-mix(in srgb, var(--surface-strong) 72%, var(--surface) 28%);
+    --field-focus-border: color-mix(in srgb, var(--primary) 78%, var(--outline) 22%);
+
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: var(--field-bg);
+    border-radius: 0.65rem;
+    border: 1px solid var(--field-border);
+    padding: 1.4rem 0.75rem 0.4rem 0.75rem;
+    gap: .5rem;
+    height: 3.5rem;
+    transition: background 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+    cursor: text;
+}
+
+
+/* The Absolute Label */
+.field > span:not(.chip) {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--field-label);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.field:hover:not(.has-image-select) {
+    border-color: var(--field-hover);
+}
+
+
+/* Specific styling for inputs inside the field container */
+.field input,
+.field textarea,
+.field select {
+    border: none !important;
+    background: transparent !important;
+    color: var(--field-text);
+    font-size: 0.88rem;
+    padding: .5rem 0;
+    width: 100%;
+    outline: none;
+    box-shadow: none !important;
+}
+
+.field textarea {
+    resize: none;
+    align-self: flex-start;
+    margin-top: 0.2rem;
+}
+
+/* Color Picker Swatch Styling */
+.field input[type="color"] {
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.field input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.field input[type="color"]::-webkit-color-swatch {
+    border: 1px solid color-mix(in srgb, var(--outline) 65%, var(--text) 35%);
+    border-radius: 4px;
+}
+
+.field.color-field {
+    align-items: center;
+    gap: 0.35rem;
+    padding: 1.4rem .75rem .4rem;
+    height: 3.5rem;
+}
+
+.field.color-field input[type="color"] {
+    width: 1.4rem;
+    min-width: 1.4rem;
+    height: 1.4rem;
+    padding: 0;
+    flex: 0 0 1.4rem;
+}
+
+.field.color-field input[type="text"] {
+    flex: 0 0 5.75rem;
+    width: 5.75rem;
+    min-width: 0;
+    padding: 0.2rem 0;
+    font-size: 0.8rem;
+}
+
+.field.color-field input[type="color"],
+.field.color-field input[type="text"] {
+    border-radius: 0.35rem;
+}
+
+/* Interaction States */
+.field:focus-within:not(.has-image-select) {
+    background: var(--field-focus-bg);
+    border-color: var(--field-focus-border);
+}
+
+.field:focus-within:not(.has-image-select) span {
+    color: var(--primary);
+}
+
+/* Checkbox specific override to keep them simple */
+.field.checkbox {
+    background: transparent;
+    border: none;
+    padding: 0.5rem 0;
+    min-height: auto;
+}
+
+.field.checkbox span {
+    position: static;
+    font-size: 0.84rem;
+}
+
+.field.checkbox input {
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+.field.has-image-select {
+    align-items: stretch;
+    flex-direction: column;
+    height: auto;
+    min-height: 0;
+    padding: 1.4rem 0.75rem 0.75rem 0.75rem;
+    cursor: default;
+}
+
+.field.has-image-select > span {
+    position: static;
+    top: auto;
+    left: auto;
+    margin-bottom: 0.35rem;
+}
+
+.field.has-image-select input[type="hidden"] {
+    display: none;
+}
+
+.field.has-image-select .image-select-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    max-height: 48dvh;
+    overflow: auto;
+}
+
+.field.has-image-select .image-select-card span {
+    position: static;
+    top: auto;
+    left: auto;
+    pointer-events: auto;
+}
+
+/* Image input styling */
+.content-asset-row {
+    --field-bg: var(--surface-variant);
+    --field-border: color-mix(in srgb, var(--outline) 88%, transparent);
+    --field-text: var(--text);
+    --field-label: var(--text-secondary);
+    --field-hover-bg: color-mix(in srgb, var(--surface-variant) 88%, var(--primary) 12%);
+    --field-focus-bg: color-mix(in srgb, var(--surface-strong) 72%, var(--surface) 28%);
+    --field-focus-border: color-mix(in srgb, var(--primary) 78%, var(--outline) 22%);
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--field-bg);
+    border-radius: 0.65rem;
+    border: 1px solid var(--field-border);
+    padding: 1.4rem 0.75rem 0.4rem 0.75rem;
+    gap: .5rem;
+    height: auto;
+    transition: background 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+    cursor: default;
+    /* ensure relative positioning so label can be positioned above preview */
+    position: relative;
+}
+
+.content-asset-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    aspect-ratio: 16/9;
+    /* leave space at top for the label placed above the preview */
+    margin-top: .5rem;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    background: var(--surface);
+}
+
+.content-asset-preview img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content-asset-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.content-asset-name {
+    /* Match `.field` label styling (small, muted) */
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--field-label);
+    margin-bottom: 0.25rem;
+    /* place above the preview */
+    position: absolute;
+    top: 0.6rem;
+    left: .8rem;
+    z-index: 2;
+}
+
+.content-asset-source {
+    /* Match the field value styling (prominent) */
+    color: var(--field-text);
+    font-size: 0.98rem;
+    line-height: 1.1;
+}
+.content-asset-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+/* No Label Modifier */
+.field.no-label {
+    padding: 0.75rem;
+    height: 2.75rem;
+}
+
+.field.no-label > span:not(.chip) {
+    display: none;
+}

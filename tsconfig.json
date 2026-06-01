@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "strict": true,
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "jsx": "preserve",
-    "jsxImportSource": "solid-js",
-    "types": ["vite/client"],
+    "skipLibCheck": true,
     "noEmit": true,
-    "isolatedModules": true
-  }
+    "allowImportingTsExtensions": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*"]
 }

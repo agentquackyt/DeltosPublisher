@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publisher</title>
+    <link rel="stylesheet" href="css/layouts/app.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&icon_names=book_2,category,check_circle,close,crop,delete,download,edit,format_image_left,format_paint,history,home,image,imagesmode,perm_media,public,public_off,redo,save,settings,system_update_alt,title,undo,upload" />
+</head>
+
+<body>
+    <header>
+        <div class="icon">
+            <h1>Publisher</h1>
+            <h2>by Jonas Gaden</h2>
+        </div>
+        <div class="nav-quick-links">
+            <li class="material-symbols-rounded" data-nav-action="editor.history.undo">undo</li>
+            <li class="material-symbols-rounded" data-nav-action="editor.history.open">history</li>
+            <li class="material-symbols-rounded" data-nav-action="editor.history.redo">redo</li>
+        </div>
+        <div class="nav-quick-links">
+            <li class="material-symbols-rounded" data-nav-action="export.project">save</li>
+            <li class="material-symbols-rounded" data-nav-action="export.image">system_update_alt</li>
+        </div>
+    </header>
+    <section class="app">
+        <nav>
+            <div class="nav-section">
+                <li class="material-symbols-rounded" data-nav-action="dashboard">home</li>
+                <li class="material-symbols-rounded" data-nav-action="manage.project">settings</li>
+            </div>
+            <div class="nav-section">
+                <li class="material-symbols-rounded nav-icon-design" data-nav-action="open.design">format_image_left
+                </li>
+                <li class="material-symbols-rounded nav-icon-content" data-nav-action="open.content">book_2</li>
+            </div>
+            <div class="nav-section">
+                <li class="material-symbols-rounded" data-nav-action="manage.assets">perm_media</li>
+                <li class="material-symbols-rounded" data-nav-action="manage.templates">format_paint</li>
+            </div>
+        </nav>
+        <div id="app-wrapper" >
+            <main>
+                <div id="editor-stage" class="editor-stage" aria-label="Editor stage"></div>
+            </main>
+            <aside>
+                <div class="aside-head">
+                    <h3>Properties</h3>
+                    <li class="material-symbols-rounded" data-nav-action="editor.sidebar.toggle">close</li>
+                </div>
+
+                <div class="aside-content" id="aside-design" hidden>
+                    <div class="aside-section" id="selection-panel" hidden>
+                        <h4>Selection Properties</h4>
+                        <div class="selection-details"></div>
+                    </div>
+
+                    <div class="aside-section">
+                        <h4>Insert Element</h4>
+                        <div class="element-grid">
+                            <button class="btn element-btn" data-field-action="add-text">
+                                <span class="material-symbols-rounded">title</span>
+                                <span>Text</span>
+                            </button>
+                            <button class="btn element-btn" data-field-action="add-image">
+                                <span class="material-symbols-rounded">image</span>
+                                <span>Image</span>
+                            </button>
+                            <button class="btn element-btn" data-field-action="add-decoration">
+                                <span class="material-symbols-rounded">category</span>
+                                <span>Shape</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="aside-content" id="aside-content" hidden>
+                    <div class="aside-section">
+                        <h4>Content Values</h4>
+                        <div id="content-fields-list"></div>
+                    </div>
+                </div>
+
+                <div class="aside-content" id="aside-history" hidden>
+                    <div class="aside-section">
+                        <h4>History</h4>
+                        <div id="history-panel"></div>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+        <div id="additional-wrapper" class="templates-panel" hidden>
+            <div id="additional-panel"></div>
+        </div>
+    </section>
+    <script type="module" src="ts/app.ts"></script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+
+dialog::backdrop {
+    background-color: rgba(24, 27, 31, 0.52);
+    backdrop-filter: blur(8px) brightness(0.72);
+    transition: .5s;
+}
+
+dialog.modal[open] {
+    background: color-mix(in srgb, var(--surface) 90%, transparent);
+    border: none;
+    color: var(--md-sys-color-on-surface);
+    padding: 1.5rem;
+    border-radius: 1.1rem;
+    border: 1px solid var(--md-sys-color-outline-variant);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 1.5rem;
+    outline: none;
+    min-width: 40dvw;
+    box-shadow: 0 24px 50px rgba(16, 23, 29, 0.32);
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+}
+
+.modal-description, .modal-title {
+    margin: 0;
+    padding: .5rem 0;
+}
+
+.field.has-image-select {
+    gap: 0.75rem;
+}
+
+.field.has-image-select > span {
+    font-weight: 600;
+}
+
+.image-select-grid {
+    max-height: 48dvh;
+    overflow: auto;
+}
