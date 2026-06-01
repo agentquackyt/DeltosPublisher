@@ -1,0 +1,64 @@
+.btn.primary {
+    --btn-bg: var(--primary);
+    --btn-color: var(--primary-text);
+}
+
+.btn.secondary {
+    --btn-bg: var(--secondary);
+    --btn-color: var(--secondary-text);
+    --btn-multiplier: 5%;
+
+}
+
+.btn.tertiary {
+    --btn-bg: var(--tertiary);
+    --btn-color: var(--tertiary-text);
+}
+
+.btn.is-danger, button.is-danger {
+    --btn-bg: transparent;
+    --btn-color: var(--error);
+    --btn-multiplier: 5%;
+}
+
+button.is-danger:hover {
+    background: color-mix(in srgb, var(--error) 10%, transparent);
+    color: color-mix(in srgb, var(--error) 80%, var(--multiplier) calc(var(--btn-multiplier)));
+}
+
+button, .btn {
+    --btn-bg: var(--surface-strong);
+    --btn-color: var(--text);
+    --btn-multiplier: 10%;
+
+    background: var(--btn-bg);
+    color: var(--btn-color);
+    border-radius: .75rem;
+    padding: .5rem .75rem ;
+    gap: .5rem;
+    border: none;
+    outline: none;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    transition: .25s ease;
+
+    font-weight: 500;
+    font-size: medium;
+}
+
+button:hover, .btn:hover {
+    background: color-mix(in srgb, var(--btn-bg) 80%, var(--multiplier) calc(var(--btn-multiplier) + 5%));
+    color: color-mix(in srgb, var(--btn-color) 80%, var(--multiplier) calc(var(--btn-multiplier)));
+}
+
+button:active, .btn:active {
+    background: color-mix(in srgb, var(--btn-bg) 80%, var(--multiplier) 30%);
+    color: color-mix(in srgb, var(--btn-color) 80%, var(--multiplier) 20%);
+}
+
+.btn.btn-xl {
+    padding: 1rem;
+}

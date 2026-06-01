@@ -4,18 +4,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publisher</title>
+    <title>Publisher by Jonas Gaden</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&icon_names=book_2,category,check_circle,close,delete,download,edit,format_image_left,format_paint,history,home,image,perm_media,redo,save,settings,system_update_alt,title,undo,upload" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
 
-    <!-- Social tags -->
+        :root {
+            --primary: #1a73e8;
+            --background-color: #f8f9fa;
+            --surface-color: #ffffff;
+            --text-primary: #202124;
+            --text-secondary: #5f6368;
+            --outline: #dadce0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        [hidden] {
+            display: none !important;
+        }
+
+        html {
+            font-family: 'Google Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .material-symbols-rounded {
+            user-select: none;
+        }
+
+        .app-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1rem;
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            color: var(--primary, #1a73e8);
+            background: transparent;
+            border: 1px solid var(--outline, #dadce0);
+            font-weight: 500;
+            transition: background 150ms ease;
+            gap: 8px;
+        }
+
+        .app-link:hover {
+            background: rgba(26, 115, 232, 0.04);
+        }
+
+        nav {
+            background-color: var(--surface-color);
+            border-bottom: 1px solid var(--outline);
+            padding: 16px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .brand {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .brand h1 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .brand h2 {
+            font-size: 0.875rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+        }
+
+        .nav-actions .app-link {
+            margin-top: 0;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 96px 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 24px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--outline);
+            border-radius: 8px;
+            padding: 32px;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-icon {
+            color: var(--primary);
+            font-size: 32px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .call-to-action {
+            background-color: var(--surface-color);
+            text-align: center;
+            padding: 80px 24px;
+            border-top: 1px solid var(--outline);
+        }
+
+        footer {
+            background-color: var(--background-color);
+            text-align: center;
+            padding: 32px;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            border-top: 1px solid var(--outline);
+        }
+    </style>
 </head>
 
 <body>
-    <main>
-        <h1>Publisher</h1>
-        <h2>by Jonas Gaden</h2>
+
+    <nav>
+        <div class="brand">
+            <h1>Publisher</h1>
+            <h2>by Jonas Gaden</h2>
+        </div>
+        <div class="nav-actions">
+            <a href="app.html" class="app-link">Open Editor</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h2>Bring your ideas to the digital stage.</h2>
+        <p>Publisher is a streamlined, flat-design web application that separates your creative design from your structural content. Manage layouts, organize assets, and export your final visions effortlessly from a single, powerful interface.</p>
+        <div class="hero-actions">
+            <a href="app.html" class="app-link"><span class="material-symbols-rounded">edit</span> Start Creating</a>
+            <a href="#features" class="app-link">Learn More</a>
+        </div>
+    </header>
+
+    <main id="features" class="features-container">
+        <section class="feature-card">
+            <span class="material-symbols-rounded feature-icon">format_image_left</span>
+            <h3>Design and Content Separation</h3>
+            <p>Our platform introduces a dual-workflow system that allows you to manage the visual aesthetics of your project completely independently from the underlying text and data values. This separation ensures that structural edits never accidentally break your carefully crafted layouts.</p>
+        </section>
+
+        <section class="feature-card">
+            <span class="material-symbols-rounded feature-icon">category</span>
+            <h3>Intuitive Element Management</h3>
+            <p>The interactive editor stage lets you seamlessly drop text boxes, high-resolution images, and geometric shapes exactly where you need them. You can fine-tune every detail using the dynamic properties sidebar, which automatically updates based on your current selection.</p>
+        </section>
+
+        <section class="feature-card">
+            <span class="material-symbols-rounded feature-icon">history</span>
+            <h3>Comprehensive History Tracking</h3>
+            <p>Creative experimentation requires the freedom to make mistakes. The application features a robust history management system that meticulously logs your actions, giving you the ability to undo or redo changes infinitely and restore previous iterations of your design canvas.</p>
+        </section>
+
+        <section class="feature-card">
+            <span class="material-symbols-rounded feature-icon">system_update_alt</span>
+            <h3>Flexible Export Capabilities</h3>
+            <p>When your design is complete, taking it out of the application is a frictionless process. You can instantly save the raw project files for future editing sessions, or directly export the entire stage as a flattened, high-quality image ready for distribution.</p>
+        </section>
+
+        <section class="feature-card">
+            <span class="material-symbols-rounded feature-icon">perm_media</span>
+            <h3>Integrated Asset Dashboard</h3>
+            <p>Keep your creative workspace perfectly organized without ever leaving the application environment. The built-in asset manager provides a centralized location to upload, categorize, and access all your essential media files exactly when inspiration strikes.</p>
+        </section>
+
+        <section class="feature-card">
+            <span class="material-symbols-rounded feature-icon">format_paint</span>
+            <h3>Reusable Project Templates</h3>
+            <p>Accelerate your workflow by transforming your most successful layouts into repeatable templates. The dedicated template panel enables you to save custom configurations and deploy them across new projects, ensuring brand consistency and saving valuable design time.</p>
+        </section>
     </main>
-    <section class="features"></section>
-    <section class="get-started"></section>
+
+    <section class="call-to-action">
+        <h2 style="font-size: 2rem; margin-bottom: 16px; color: var(--text-primary);">Ready to build your next project?</h2>
+        <p style="color: var(--text-secondary); font-size: 1.125rem;">Launch the Publisher environment in your browser today.</p>
+        <a href="app.html" class="app-link" style="padding: 0.75rem 2rem; font-size: 1rem;">Go to Dashboard</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Publisher Application. Designed and developed by Jonas Gaden.</p>
+    </footer>
+
 </body>
 
 </html>
